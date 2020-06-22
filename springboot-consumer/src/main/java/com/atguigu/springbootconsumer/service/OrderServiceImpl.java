@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Reference
+	@Reference(retries = 3,stub = "com.atguigu.springbootconsumer.service.UserServiceStub",url = "127.0.0.1:20882",loadbalance = "") //dubbo直连
 	UserService userService;
 
 	public List<UserAddress> initOrder(String userId) {

@@ -9,7 +9,7 @@ import service.UserService;
 import java.util.Arrays;
 import java.util.List;
 
-@Service
+@Service(weight = 10)
 @Component
 public class UserServiceImpl implements UserService {
 
